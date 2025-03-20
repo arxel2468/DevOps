@@ -8,6 +8,7 @@
 | Log Archive | Beginner | A tool to archive logs on a set schedule by compressing them and storing them in a new directory. | [Details](#log-archive-tool) |
 | Nginx Log Analyzer | Beginner | A tool to analyze Nginx access logs and provide various statistics about requests, IPs, and response codes. | [Details](#nginx-log-analyzer) |
 | GitHub Pages Deployment | Beginner | A GitHub Actions workflow to automatically deploy a static website to GitHub Pages. | [Details](#github-pages-deployment) |
+| SSH Remote Server Setup | Beginner | A guide for setting up SSH access to a remote server with multiple SSH keys for secure authentication. | [Details](#ssh-remote-server-setup) |
 
 ## Project Details
 
@@ -233,7 +234,7 @@ The project consists of three main components:
    - Styled with CSS for better presentation
    - Contains a list of the projects in this repository
 
-2. **GitHub Actions Workflow (.github/workflows/deploy.yml)**
+2. **GitHub Actions Workflow (.github/workflows/static.yml)**
    - Triggered only when changes to index.html are pushed to the main branch
    - Sets up the necessary environment for deployment
    - Builds the site by copying files to the _site directory
@@ -262,4 +263,62 @@ Once deployed, the site can be viewed at: https://[username].github.io/[reposito
 - Add a custom domain
 - Implement a static site generator like Jekyll or Hugo
 - Add more interactive features to the website
-- Implement testing before deployment 
+- Implement testing before deployment
+
+### SSH Remote Server Setup
+[Project Link](https://roadmap.sh/projects/ssh-remote-server-setup)
+
+#### Overview
+This project provides a guide for setting up SSH access to a remote Linux server with multiple SSH keys. It demonstrates how to configure both the server and client sides for secure SSH authentication.
+
+#### Features
+- Generation of multiple SSH key pairs
+- Server-side SSH configuration
+- Client-side SSH configuration
+- Security hardening with Fail2Ban (stretch goal)
+- Convenient SSH access using aliases
+
+#### Prerequisites
+- A Linux server (uses LinuxZoo.net for practice)
+- SSH client (built into Linux/macOS, or use PuTTY/Windows Terminal on Windows)
+- Basic command line knowledge
+
+#### Implementation Details
+The project includes:
+
+1. **SSH Key Generation**
+   - RSA key pair (4096-bit)
+   - ED25519 key pair (more modern and secure)
+
+2. **Server Configuration**
+   - Setting up the `.ssh` directory with proper permissions
+   - Adding public keys to `authorized_keys`
+   - Configuring SSH daemon settings
+
+3. **Client Configuration**
+   - Setting up the SSH config file for convenient access
+   - Creating aliases for different keys
+
+4. **Fail2Ban Setup (Stretch Goal)**
+   - Installation and configuration of Fail2Ban
+   - Protection against brute force attacks
+
+#### Usage
+Detailed step-by-step instructions are provided in the [ssh-remote-server-setup.md](ssh-remote-server-setup.md) file, covering:
+
+1. How to generate SSH keys
+2. How to connect to a remote server
+3. How to add keys to the server
+4. How to configure the SSH client
+5. How to test connections with different keys
+
+#### Security Considerations
+- Proper file permissions for SSH files
+- Using strong encryption algorithms
+- Implementing Fail2Ban for additional security
+- Best practices for SSH configuration
+
+#### Notes
+- This implementation uses LinuxZoo.net as a safe environment for practice
+- The approach works for any Linux/Unix server
+- The guide includes troubleshooting tips for common issues 

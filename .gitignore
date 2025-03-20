@@ -17,3 +17,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# GitHub Actions
+.github/
+
+
+ssh_keys/
