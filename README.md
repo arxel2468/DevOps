@@ -1,12 +1,21 @@
-# Beginner DevOps Projects
+# DevOps Projects Collection
 
-## Project 1: Server Performance Statistics Script
-(https://roadmap.sh/projects/server-stats)
+## Projects Overview
 
-### Overview
+| Project Name | Difficulty | Description | Link |
+|-------------|------------|-------------|------|
+| Server Stats | Beginner | A comprehensive server monitoring tool that provides real-time information about various system metrics. | [Details](#server-performance-statistics-script) |
+| Log Archive | Beginner | A tool to archive logs on a set schedule by compressing them and storing them in a new directory. | [Details](#log-archive-tool) |
+
+## Project Details
+
+### Server Performance Statistics Script
+[Project Link](https://roadmap.sh/projects/server-stats)
+
+#### Overview
 The `server-stats.sh` script is a comprehensive server monitoring tool that provides real-time information about various system metrics. This script is designed to work on any Linux server and provides detailed insights into system performance, resource usage, and system status.
 
-### Features
+#### Features
 The script provides the following information:
 
 1. **System Information**
@@ -52,30 +61,70 @@ The script provides the following information:
    - Used Swap Space
    - Free Swap Space
 
-### Prerequisites
+#### Prerequisites
 - Linux Operating System
 - Basic system utilities (top, free, df, ps, etc.)
 - Bash shell
 
-### Installation
+#### Installation
 1. Clone or download the repository
-2. Navigate to the Beginner directory
-3. Make the script executable:
+2. Make the script executable:
    ```bash
    chmod +x server-stats.sh
    ```
 
-### Usage
+#### Usage
 Run the script using:
 ```bash
 ./server-stats.sh
 ```
 
-### Output Format
-The script uses color-coded output for better readability:
-- 🟢 Green: Main header
-- 🟡 Yellow: Section headers
-- ⚪ White: Data values
+### Log Archive Tool
+[Project Link](https://roadmap.sh/projects/log-archive-tool)
+
+#### Overview
+A command-line tool designed to archive logs by compressing them and storing them in a new directory. This tool helps maintain system cleanliness while preserving logs in a compressed format for future reference.
+
+#### Features
+- Compress logs into tar.gz format
+- Timestamp-based archive naming
+- Archive history logging
+- Directory existence validation
+- Archive size reporting
+
+#### Prerequisites
+- Linux/Unix-based system
+- Bash shell
+- Basic system utilities (tar, date, du)
+
+#### Installation
+1. Clone or download the repository
+2. Make the script executable:
+   ```bash
+   chmod +x log-archive.sh
+   ```
+
+#### Usage
+Run the script with a log directory as an argument:
+```bash
+./log-archive.sh <log-directory>
+```
+
+Example:
+```bash
+./log-archive.sh /var/log
+```
+
+#### Output
+- Creates a `logs_archive` directory
+- Generates timestamped archives (e.g., `logs_archive_20240816_100648.tar.gz`)
+- Maintains an `archive_history.log` file with archive creation records
+- Displays archive size and status
+
+#### Notes
+- The script requires read permissions for the log directory
+- Archives are stored in a `logs_archive` directory in the current working directory
+- Each archive operation is logged in `archive_history.log`
 
 ### Technical Details
 The script uses various Linux commands and utilities:
