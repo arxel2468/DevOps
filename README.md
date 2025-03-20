@@ -7,6 +7,7 @@
 | Server Stats | Beginner | A comprehensive server monitoring tool that provides real-time information about various system metrics. | [Details](#server-performance-statistics-script) |
 | Log Archive | Beginner | A tool to archive logs on a set schedule by compressing them and storing them in a new directory. | [Details](#log-archive-tool) |
 | Nginx Log Analyzer | Beginner | A tool to analyze Nginx access logs and provide various statistics about requests, IPs, and response codes. | [Details](#nginx-log-analyzer) |
+| GitHub Pages Deployment | Beginner | A GitHub Actions workflow to automatically deploy a static website to GitHub Pages. | [Details](#github-pages-deployment) |
 
 ## Project Details
 
@@ -205,4 +206,60 @@ The script uses various Unix commands:
 - `sort`: For sorting data
 - `uniq`: For counting unique occurrences
 - `head`: For limiting output to top 5
-- `wc`: For counting lines and unique entries 
+- `wc`: For counting lines and unique entries
+
+### GitHub Pages Deployment
+[Project Link](https://roadmap.sh/projects/github-actions-deployment-workflow)
+
+#### Overview
+A GitHub Actions workflow that automatically deploys a static website to GitHub Pages whenever changes are made to the index.html file. This project demonstrates continuous deployment using GitHub's built-in CI/CD capabilities.
+
+#### Features
+- Automated deployment to GitHub Pages
+- Path-specific triggering (only deploys when index.html changes)
+- Simple static website showcase
+- Demonstration of GitHub Actions workflow
+
+#### Prerequisites
+- GitHub account
+- Repository with GitHub Pages enabled
+- Basic understanding of YAML and GitHub Actions
+
+#### Implementation Details
+The project consists of three main components:
+
+1. **Static Website (index.html)**
+   - A simple HTML page that displays information about the DevOps projects
+   - Styled with CSS for better presentation
+   - Contains a list of the projects in this repository
+
+2. **GitHub Actions Workflow (.github/workflows/deploy.yml)**
+   - Triggered only when changes to index.html are pushed to the main branch
+   - Sets up the necessary environment for deployment
+   - Builds the site by copying files to the _site directory
+   - Deploys the built site to GitHub Pages
+
+3. **Repository Configuration**
+   - GitHub repository needs to have Pages enabled
+   - Permissions for GitHub Actions to deploy Pages
+
+#### How It Works
+1. When a change is pushed to the index.html file in the main branch, the workflow is triggered
+2. The workflow checks out the repository contents
+3. It sets up Node.js and other dependencies
+4. It prepares the site by copying files to a build directory
+5. Finally, it deploys the built site to GitHub Pages
+
+#### Viewing the Deployed Site
+Once deployed, the site can be viewed at: https://[username].github.io/[repository-name]/
+
+#### Notes
+- The first deployment may take a few minutes to become available
+- GitHub Pages deployment requires the repository to have GitHub Pages enabled in the settings
+- The workflow requires appropriate permissions to deploy to GitHub Pages
+
+#### Future Enhancements
+- Add a custom domain
+- Implement a static site generator like Jekyll or Hugo
+- Add more interactive features to the website
+- Implement testing before deployment 
