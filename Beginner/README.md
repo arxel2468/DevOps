@@ -1,6 +1,7 @@
 # Beginner DevOps Projects
 
 ## Project 1: Server Performance Statistics Script
+(https://roadmap.sh/projects/server-stats)
 
 ### Overview
 The `server-stats.sh` script is a comprehensive server monitoring tool that provides real-time information about various system metrics. This script is designed to work on any Linux server and provides detailed insights into system performance, resource usage, and system status.
