@@ -6,6 +6,7 @@
 |-------------|------------|-------------|------|
 | Server Stats | Beginner | A comprehensive server monitoring tool that provides real-time information about various system metrics. | [Details](#server-performance-statistics-script) |
 | Log Archive | Beginner | A tool to archive logs on a set schedule by compressing them and storing them in a new directory. | [Details](#log-archive-tool) |
+| Nginx Log Analyzer | Beginner | A tool to analyze Nginx access logs and provide various statistics about requests, IPs, and response codes. | [Details](#nginx-log-analyzer) |
 
 ## Project Details
 
@@ -149,4 +150,59 @@ Potential improvements could include:
 - Alert thresholds for critical metrics
 - Export functionality for data analysis
 - Web interface for remote monitoring
-- Custom metric collection based on user needs 
+- Custom metric collection based on user needs
+
+### Nginx Log Analyzer
+[Project Link](https://roadmap.sh/projects/nginx-log-analyser)
+
+#### Overview
+A command-line tool designed to analyze Nginx access logs and provide various statistics about requests, IPs, and response codes. This tool helps in understanding web server traffic patterns and identifying potential issues.
+
+#### Features
+- Top 5 IP addresses with the most requests
+- Top 5 most requested paths
+- Top 5 response status codes
+- Top 5 user agents
+- Additional statistics:
+  - Total number of requests
+  - Total unique IPs
+  - Total unique paths
+  - Total unique user agents
+- Response code distribution
+
+#### Prerequisites
+- Linux/Unix-based system
+- Bash shell
+- Basic system utilities (awk, sort, uniq, head)
+
+#### Installation
+1. Clone or download the repository
+2. Make the script executable:
+   ```bash
+   chmod +x nginx-log-analyzer.sh
+   ```
+
+#### Usage
+Run the script with a log file as an argument:
+```bash
+./nginx-log-analyzer.sh <log-file>
+```
+
+Example:
+```bash
+./nginx-log-analyzer.sh /var/log/nginx/access.log
+```
+
+#### Output Format
+The script provides color-coded output:
+- 🟡 Yellow: Section headers
+- 🟢 Green: Statistics and results
+- 🔴 Red: Error messages
+
+#### Technical Details
+The script uses various Unix commands:
+- `awk`: For text processing and field extraction
+- `sort`: For sorting data
+- `uniq`: For counting unique occurrences
+- `head`: For limiting output to top 5
+- `wc`: For counting lines and unique entries 
